@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Pyplot.jl by autozimu</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Pyplot.jl</h1>
+        <p>Graphics solution for Julia based on pyplot from matplotlib.</p>
+
+        <p class="view"><a href="https://github.com/autozimu/pyplot.jl">View the Project on GitHub <small>autozimu/pyplot.jl</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/autozimu/pyplot.jl/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/autozimu/pyplot.jl/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/autozimu/pyplot.jl">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h2>Example</h2>
+
+<pre><code>require("pyplot")
+using pyplot
+
+x = linspace(-pi, pi)
+y = sin(x)
+
+plot(x, y)
+title(E"$sin(x)$")
+savefig("sin.png")
+# savefig("sin.pdf")
+</code></pre>
+
+<p><img src="https://github.com/autozimu/pyplot.jl/raw/screenshot/sin.png" alt="screenshot"></p>
+
+<h2>What</h2>
+
+<p>Graphics solution for <a href="http://julialang.org/" title="The Julia Language">Julia</a> based on <a href="http://matplotlib.org/" title="matplotlib">matploblib</a>, mainly the pyplot
+module.</p>
+
+<h2>Why</h2>
+
+<p>The Julia community seems to be having a discussion over which approach
+should be used as the default graphics solution [1][] [2][], and it may
+take a longer time for a mature solution to emerge. I just cannot wait
+that long, so I started my own.</p>
+
+<h2>Prerequirements</h2>
+
+<ul>
+<li><a href="https://github.com/JuliaLang/julia">Julia</a></li>
+<li><a href="http://www.zeromq.org/">zmq</a></li>
+<li><a href="http://libslack.org/daemon/">daemon</a></li>
+<li>
+<a href="http://ipython.org/">ipython</a> + <a href="http://matplotlib.org/">matplotlib</a>
+
+<ul>
+<li><a href="https://github.com/zeromq/pyzmq">pyzmq</a></li>
+</ul>
+</li>
+<li>patience :)</li>
+</ul><h2>Setup</h2>
+
+<p>In julia session, install module dependencies by</p>
+
+<pre><code>require("Pkg")
+Pkg.add("ZMQ")
+</code></pre>
+
+<p>Install this module by</p>
+
+<pre><code>git clone https://github.com/autozimu/pyplot.jl ~/.julia/pyplot
+</code></pre>
+
+<p>Now in julia session,</p>
+
+<pre><code>require("pyplot")
+pyplot.figure()
+</code></pre>
+
+<p>If matplotlib window opened up, then it should be a successful
+installation.</p>
+
+<h2>Usage</h2>
+
+<p>Mostly, the function signature is the same as calling pyplot in python /
+ipython, except some semantic differences due to Julia's reluctance to
+support <a href="http://rosettacode.org/wiki/Named_parameters">kwargs</a>:</p>
+
+<ul>
+<li>kwargs: use <code>:color, "red"</code> for <code>color="red"</code>
+</li>
+<li>escaping characters: use <code>\\n</code> for <code>\n</code>
+</li>
+</ul><p>Demos should be enough for elementary and medium uses.</p>
+
+<h2>Support and Contact</h2>
+
+<p>If any questions or comments, feel free to contact <a href="mailto:autozimu@gmail.com">autozimu@gmail.com</a>.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/autozimu">autozimu</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
