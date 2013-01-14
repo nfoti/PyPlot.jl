@@ -33,16 +33,19 @@
 <pre><code>require("pyplot")
 using pyplot
 
-x = linspace(-pi, pi)
-y = sin(x)
+# create new figure
+figure()
 
-plot(x, y)
-title(E"$sin(x)$")
-savefig("sin.png")
-# savefig("sin.pdf")
+# generate data
+r = linspace(0, pi, 301)
+theta = 2 * pi * x
+
+# plot
+polar(theta, x)
+savefig("demo.png")
 </code></pre>
 
-<p><img src="https://github.com/autozimu/pyplot.jl/raw/screenshot/sin.png" alt="screenshot"></p>
+<p><img src="https://github.com/autozimu/pyplot.jl/raw/gh-pages/demo.png" alt="screenshot"></p>
 
 <h2>What</h2>
 
@@ -59,8 +62,12 @@ emerge. I just cannot wait that long, so I started my own.</p>
 <h2>Prerequirements</h2>
 
 <ul>
-<li><a href="https://github.com/JuliaLang/julia">Julia</a></li>
-<li><a href="http://www.zeromq.org/">zmq</a></li>
+<li>
+<a href="https://github.com/JuliaLang/julia">Julia</a>: recent versions
+(&gt; 2013-01-10) may be needed.</li>
+<li>
+<a href="http://www.zeromq.org/">zmq</a>: version 2.x only due to limitation of <a href="https://github.com/aviks/ZMQ.jl">ZMQ.jl</a>
+</li>
 <li><a href="http://libslack.org/daemon/">daemon</a></li>
 <li>
 <a href="http://ipython.org/">ipython</a> +
