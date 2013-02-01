@@ -50,11 +50,11 @@ emerge. I just cannot wait that long, so I started my own.</p>
 
 <span class="c"># generate data</span>
 <span class="n">r</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">pi</span><span class="p">,</span> <span class="mi">301</span><span class="p">)</span>
-<span class="n">theta</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="nb">pi</span> <span class="o">*</span> <span class="n">x</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="nb">pi</span> <span class="o">*</span> <span class="n">r</span>
 
 <span class="c"># plot</span>
-<span class="n">polar</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-<span class="n">savefig</span><span class="p">(</span><span class="s">"demo.png"</span><span class="p">)</span>
+<span class="n">polar</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+<span class="n">savefig</span><span class="p">(</span><span class="s">"demo/demo.png"</span><span class="p">)</span>
 </pre></div>
 
 <p><img src="https://github.com/autozimu/pyplot.jl/raw/master/demo/demo.png" alt="screenshot"></p>
@@ -110,20 +110,22 @@ installation.</p>
 <h2>Usage</h2>
 
 <p>Mostly, the function signature is the same as calling pyplot in python /
-ipython, except some semantic differences due to Julia's reluctance to
-support <a href="http://rosettacode.org/wiki/Named_parameters">kwargs</a>:</p>
+ipython, except some semantic differences due to the implementation:</p>
 
 <ul>
-<li>kwargs: use <code>:color, "red"</code> for <code>color="red"</code>
+<li>
+<a href="http://rosettacode.org/wiki/Named_parameters">kwargs</a>: use <code>:color, "red"</code> for <code>color="red"</code>
 </li>
-<li>escaping characters: use <code>\\n</code> for <code>\n</code>
-</li>
+<li>escaping characters: use <code>\\</code> for <code>\</code> to escape characters.
+Alternatively, prefix string with <code>E</code>, <code>I</code>, or <code>L</code> accordingly to
+prevent Julia perform escaping and/or interpolation.
+[<a href="http://docs.julialang.org/en/latest/manual/strings/#non-standard-string-literals">1</a>]</li>
 </ul><p><a href="https://github.com/autozimu/pyplot.jl/tree/master/demo">Demos</a> should be enough for elementary and medium usage.</p>
 
 <h2>Limitation</h2>
 
 <ul>
-<li>Cannot send non-ASCII string</li>
+<li>UTF-8 string is not supported.</li>
 </ul><h2>Support and Contact</h2>
 
 <p>If any questions or comments, feel free to contact <a href="mailto:autozimu@gmail.com">autozimu@gmail.com</a>.</p>
