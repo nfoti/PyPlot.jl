@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Pyplot.jl by autozimu</title>
+    <title>pyplot.jl by autozimu</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
@@ -15,8 +15,8 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1>Pyplot.jl</h1>
-        <p>Graphics solution for Julia based on pyplot from matplotlib.</p>
+        <h1>pyplot.jl</h1>
+        <p>Graphics solution for Julia based on matplotlib.pyplot</p>
 
         <p class="view"><a href="https://github.com/autozimu/pyplot.jl">View the Project on GitHub <small>autozimu/pyplot.jl</small></a></p>
 
@@ -42,19 +42,25 @@ emerge. I just cannot wait that long, so I started my own.</p>
 
 <h2>Example</h2>
 
-<div class="highlight"><pre><span class="n">require</span><span class="p">(</span><span class="s">"pyplot"</span><span class="p">)</span>
+<div class="highlight"><pre><span class="c"># load module</span>
 <span class="n">using</span> <span class="n">pyplot</span>
 
-<span class="c"># create new figure</span>
+<span class="c"># generate data</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">pi</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c"># pop new figure window</span>
 <span class="n">figure</span><span class="p">()</span>
 
-<span class="c"># generate data</span>
-<span class="n">r</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">pi</span><span class="p">,</span> <span class="mi">301</span><span class="p">)</span>
-<span class="n">theta</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="nb">pi</span> <span class="o">*</span> <span class="n">r</span>
-
 <span class="c"># plot</span>
-<span class="n">polar</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
-<span class="n">savefig</span><span class="p">(</span><span class="s">"demo/demo.png"</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="p">:</span><span class="n">label</span><span class="p">,</span> <span class="s">L"</span><span class="si">$</span><span class="s">sin(x)</span><span class="si">$</span><span class="s">"</span><span class="p">)</span>
+<span class="n">legend</span><span class="p">(</span><span class="s">"upper left"</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s">L"</span><span class="si">$</span><span class="s">sin(x)</span><span class="si">$</span><span class="s">"</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s">L"</span><span class="si">$</span><span class="s">x</span><span class="si">$</span><span class="s">"</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s">L"</span><span class="si">$</span><span class="s">y</span><span class="si">$</span><span class="s">"</span><span class="p">)</span>
+
+<span class="c"># save the plot</span>
+<span class="n">savefig</span><span class="p">(</span><span class="s">"demo.png"</span><span class="p">)</span>
 </pre></div>
 
 <p><img src="https://github.com/autozimu/pyplot.jl/raw/master/demo/demo.png" alt="screenshot"></p>
@@ -73,8 +79,7 @@ to matplotlib developers.</p>
 
 <ul>
 <li>
-<a href="https://github.com/JuliaLang/julia">Julia</a>: recent versions
-(&gt; 2013-01-10) may be required.</li>
+<a href="https://github.com/JuliaLang/julia">Julia</a>: recent versions (&gt;= 0.1) may be required.</li>
 <li>
 <a href="http://www.zeromq.org/">zmq</a>: version 2.x only due to <a href="https://github.com/aviks/ZMQ.jl">ZMQ.jl</a>
 </li>
