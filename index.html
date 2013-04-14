@@ -43,7 +43,7 @@ emerge. I just cannot wait that long, so I started my own.</p>
 <h2>Example</h2>
 
 <div class="highlight"><pre><span class="c"># load module</span>
-<span class="n">using</span> <span class="n">pyplot</span>
+<span class="k">using</span> <span class="n">pyplot</span>
 
 <span class="c"># generate data</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">pi</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
@@ -79,22 +79,22 @@ to matplotlib developers.</p>
 
 <ul>
 <li>
-<a href="https://github.com/JuliaLang/julia">Julia</a>: recent versions (&gt;= 0.1) may be required.</li>
+<a href="https://github.com/JuliaLang/julia">Julia</a>: recent versions (&gt;= 0.1)
+may be required.</li>
+<li><a href="http://www.zeromq.org/">zmq</a></li>
 <li>
-<a href="http://www.zeromq.org/">zmq</a>: version 2.x only due to <a href="https://github.com/aviks/ZMQ.jl">ZMQ.jl</a>
-</li>
-<li>
-<a href="http://ipython.org/">ipython</a> +
-<a href="http://matplotlib.org/">matplotlib</a> +
-<a href="https://github.com/zeromq/pyzmq">pyzmq</a>
+<a href="http://ipython.org/">ipython</a> + <a href="http://matplotlib.org/">matplotlib</a>
+
+<ul>
+<li><a href="http://www.zeromq.org/bindings:python">pyzmq</a></li>
+</ul>
 </li>
 <li>patience :)</li>
 </ul><h2>Setup</h2>
 
 <p>In julia session, install module dependencies by</p>
 
-<div class="highlight"><pre><span class="n">require</span><span class="p">(</span><span class="s">"Pkg"</span><span class="p">)</span>
-<span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">"ZMQ"</span><span class="p">)</span>
+<div class="highlight"><pre><span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">"ZMQ"</span><span class="p">)</span>
 </pre></div>
 
 <p>Install this module by</p>
@@ -104,11 +104,11 @@ to matplotlib developers.</p>
 
 <p>Now in julia session,</p>
 
-<div class="highlight"><pre><span class="n">require</span><span class="p">(</span><span class="s">"pyplot"</span><span class="p">)</span>
-<span class="n">pyplot</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<div class="highlight"><pre><span class="k">using</span> <span class="n">pyplot</span>
+<span class="n">figure</span><span class="p">()</span>
 </pre></div>
 
-<p>If matplotlib window open up, it should be a successful installation.</p>
+<p>If a matplotlib window opened up, it should be a successful installation.</p>
 
 <h2>Usage</h2>
 
