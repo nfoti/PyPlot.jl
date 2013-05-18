@@ -68,41 +68,32 @@ emerge. I just cannot wait that long, so I started my own.</p>
 <h2>Features</h2>
 
 <ul>
-<li>perfect 2D plot</li>
-<li>interactive usage</li>
-<li>excellent math symbol support</li>
-<li>multiple backends (PNG, PDF, JPEG, ...)</li>
+<li>Dynamically plot</li>
+<li>Excellent math/TeX symbol support</li>
+<li>Multiple export (PNG, PDF, JPEG, ...)</li>
 </ul><p>Since this module is simply a wrapper for matplotlib, all credit goes
 to matplotlib developers.</p>
 
-<h2>Prerequirements</h2>
+<h2>Dependencies</h2>
 
 <ul>
 <li>
 <a href="https://github.com/JuliaLang/julia">Julia</a>: recent versions (&gt;= 0.1)
 may be required.</li>
 <li><a href="http://www.zeromq.org/">zmq</a></li>
-<li>
-<a href="http://ipython.org/">ipython</a> + <a href="http://matplotlib.org/">matplotlib</a>
-
-<ul>
+<li><a href="http://ipython.org/">ipython</a></li>
+<li><a href="http://matplotlib.org/">matplotlib</a></li>
 <li><a href="http://www.zeromq.org/bindings:python">pyzmq</a></li>
-</ul>
-</li>
+<li><a href="https://github.com/aviks/ZMQ.jl">ZMQ.jl</a></li>
 <li>patience :)</li>
 </ul><h2>Setup</h2>
-
-<p>In julia session, install module dependencies by</p>
-
-<div class="highlight"><pre><span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">"ZMQ"</span><span class="p">)</span>
-</pre></div>
 
 <p>Install this module by</p>
 
 <div class="highlight"><pre>git clone https://github.com/autozimu/pyplot.jl ~/.julia/pyplot
 </pre></div>
 
-<p>Now in julia session,</p>
+<p>Now in a Julia session, type</p>
 
 <div class="highlight"><pre><span class="k">using</span> <span class="n">pyplot</span>
 <span class="n">figure</span><span class="p">()</span>
@@ -125,11 +116,12 @@ prevent Julia perform escaping and/or interpolation.
 [<a href="http://docs.julialang.org/en/latest/manual/strings/#non-standard-string-literals">1</a>]</li>
 </ul><p><a href="https://github.com/autozimu/pyplot.jl/tree/master/demo">Demos</a> should be enough for elementary and medium usage.</p>
 
-<h2>Limitation</h2>
+<p>NOTE: the keyword syntax will be changed shortly in the future, with the
+introduce of keyword argument in Julia itself. And The string prefix
+<code>E</code>, <code>I</code> and <code>L</code> may not work with latest Julia, while the double slash
+<code>\\</code> will always work.</p>
 
-<ul>
-<li>UTF-8 string is not supported.</li>
-</ul><h2>Support and Contact</h2>
+<h2>Support and Contact</h2>
 
 <p>If any questions or comments, feel free to contact <a href="mailto:autozimu@gmail.com">autozimu@gmail.com</a>.</p>
       </section>
